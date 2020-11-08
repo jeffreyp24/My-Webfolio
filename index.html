@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+              <img src="images/logo.png" alt="logo">
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Resume</a></li>
+                    <li class="btn"><a href="#">Keep In Touch</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class="home">
+            <div class="container">
+                <div class="person">
+                    <span class="person-overlay"></span>
+                    <img src="images/person.png" alt="">
+                </div>
+                <div class="home-text">
+                    <h6 class="profession">Web-Developer</h6>
+                    <h1 class="name">Jeffery</h1>
+                    <p class="small-intro">Hello, my name is Jeffery Philander - I'm an Ambitious 32 year old that is in the process of self-learning, exploring and have a great desire to transition into a Front End Web Developer..</p>
+
+                    <button>Come Check Out My Site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Jquery Link-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--Lettering JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+
+    <!--Anime JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script>
+
+            $(document).ready(function() {
+              $(".name, .profession, .small-intro").lettering();
+              
+            // Images Overlay Effect
+            anime({
+              targets: '.home .person-overlay',
+              translateX: 1100,
+              delay: 1000,
+              duration: 1500,
+              easing: 'easeInSine'
+            })  
+            anime({
+              targets: '.home .person img',
+              opacity: 1,
+              delay: 1500,
+              duration: 1500,
+              easing: 'easeInSine'
+            })  
+
+            // Profession
+            anime({
+              targets: '.profession span',
+              opacity: 1,
+              duration: 1500,
+              easing: 'easeInSine',
+              delay: anime.stagger(100, {start: 3000})
+            })
+
+            // Jeffery Name - Fade In
+            anime({
+              targets: '.name span',
+              opacity: 1,
+              duration: 3000,
+              easing: 'easeInSine',
+              delay: anime.stagger(100, {start: 3000})
+            })
+
+            // Jeffery 
+            anime({
+                targets: '.name .char2, .name .char4, .name .char6',
+                keyframes: [
+                    {translateY: 100, duration: 1500}
+                ],
+                easing: 'easeInOutExpo',
+                delay: 8000,
+            })
+            anime({
+                targets: '.name .char3, .name .char5',
+                keyframes: [
+                    {translateY: -100, duration: 1500}
+                ],
+                easing: 'easeInOutExpo',
+                delay: 8000,
+            })
+
+            //Logo
+            anime({
+              targets: '.logo',
+              opacity: 1,
+              duration: 3000,
+              delay: 9500
+            })
+
+            //Menu
+            anime({
+              targets: '.menu li',
+              opacity: 1,
+              duration: 3000,
+              delay: anime.stagger(150, {start: 10500})
+            })
+
+            //Intro
+            anime({
+              targets: '.small-intro span',
+              opacity: 1,
+              duration: 1000,
+              delay: anime.stagger(50, {start: 11000})
+            })
+
+
+
+  
+	        });
+
+
+
+
+
+
+            
+        
+
+
+
+    </script>
+    
+</body>
+</html>
